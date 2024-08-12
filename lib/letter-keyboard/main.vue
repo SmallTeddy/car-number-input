@@ -1,7 +1,18 @@
 <template>
   <div v-if="showLetterKeyboard" class="letter-keyboard-layout">
     <div class="letter-close">
-      <button @click="emit('close')" class="close-btn">关闭</button>
+      <svg
+        @click="emit('close')"
+        class="close-btn"
+        viewBox="0 0 1024 1024"
+        width="200"
+        height="200"
+      >
+        <path
+          d="M512 466.944l233.472-233.472a31.744 31.744 0 0 1 45.056 45.056L557.056 512l233.472 233.472a31.744 31.744 0 0 1-45.056 45.056L512 557.056l-233.472 233.472a31.744 31.744 0 0 1-45.056-45.056L466.944 512 233.472 278.528a31.744 31.744 0 0 1 45.056-45.056z"
+          fill="#5A5A68"
+        ></path>
+      </svg>
     </div>
     <div v-for="items in letterItems" class="letter-items">
       <div
@@ -78,7 +89,7 @@ defineExpose({
 
 .close-btn {
   border: none;
-  width: 120px;
+  width: 40px;
   height: 32px;
   font-size: 16px;
   color: red;
