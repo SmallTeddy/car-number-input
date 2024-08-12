@@ -21,6 +21,10 @@ import NumberInput from "../number-input/main.vue";
 import AreaKeyboard from "../area-keyboard/main.vue";
 import LetterKeyboard from "../letter-keyboard/main.vue";
 
+defineOptions({
+  name: "car-number-input",
+});
+
 const areaKeyboardRef = ref(null);
 const letterKeyboardRef = ref(null);
 const numberInputRef = ref(null);
@@ -82,7 +86,7 @@ const numberInputClick = (type) => {
 
 const deleteKeydown = () => {
   numberInputRef.value[numberInputRef.value.active] = "";
-}
+};
 </script>
 
 <style scoped>
