@@ -96,7 +96,7 @@ defineExpose({
 
 .close-btn {
   border: none;
-  width: 60px;
+  width: 120px;
   height: 32px;
   font-size: 16px;
   color: red;
