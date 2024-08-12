@@ -1,5 +1,5 @@
 <template>
-  <div class="car-number-input-layout">
+  <div class="car-number-input-layout" :style="{ height: screenHeight + 'px' }">
     <NumberInput ref="numberInputRef" @input-click="numberInputClick" />
     <AreaKeyboard
       ref="areaKeyboardRef"
@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import NumberInput from "../number-input/main.vue";
 import AreaKeyboard from "../area-keyboard/main.vue";
 import LetterKeyboard from "../letter-keyboard/main.vue";
@@ -25,6 +25,9 @@ defineOptions({
   name: "car-number-input",
 });
 
+const screenHeight = computed(() => {
+  return window.innerHeight;
+});
 const areaKeyboardRef = ref(null);
 const letterKeyboardRef = ref(null);
 const numberInputRef = ref(null);
@@ -91,7 +94,6 @@ const deleteKeydown = () => {
 
 <style scoped>
 .car-number-input-layout {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
